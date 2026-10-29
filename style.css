@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500&display=swap');
+
+:root {
+  --avorio: #f8f5ed;
+  --carta: #fffdf8;
+  --verde: #465b4b;
+  --salvia: #879884;
+  --inchiostro: #514a40;
+  --bordo: #ddd8c9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--avorio);
+  color: var(--inchiostro);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.intestazione {
+  text-align: center;
+  padding: 64px 20px 43px;
+  border-bottom: 1px solid var(--bordo);
+}
+
+.simbolo {
+  color: var(--salvia);
+  font-size: 25px;
+  letter-spacing: 12px;
+  margin: 0 0 15px;
+}
+
+h1 {
+  color: var(--verde);
+  font-size: clamp(42px, 7vw, 76px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1;
+  margin: 0;
+}
+
+.sottotitolo {
+  margin: 19px 0 0;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: var(--verde);
+}
+
+main {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 38px 20px 65px;
+}
+
+.benvenuto {
+  max-width: 660px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ornamento {
+  color: var(--salvia);
+  font-size: 23px;
+  margin: 0 0 12px;
+}
+
+h2 {
+  color: var(--verde);
+  font-size: clamp(32px, 5vw, 46px);
+  font-weight: 500;
+  font-style: italic;
+  margin: 0 0 18px;
+}
+
+.benvenuto p:not(.ornamento) {
+  font-size: 22px;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid var(--bordo);
+  padding: 22px;
+  color: var(--salvia);
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .intestazione {
+    padding: 45px 16px 33px;
+  }
+
+  .sottotitolo {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  main {
+    padding: 30px 20px 48px;
+  }
+
+  .benvenuto p:not(.ornamento) {
+    font-size: 20px;
+  }
+}
+
+/* Rametti botanici delicati */
+.intestazione {
+  position: relative;
+  overflow: hidden;
+}
+
+.intestazione::before,
+.intestazione::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  width: 135px;
+  height: 175px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 135 175'%3E%3Cg fill='none' stroke='%238b9b87' stroke-width='1.1' opacity='.65'%3E%3Cpath d='M12 165 Q38 115 52 12 M29 130 Q8 111 12 91 M35 112 Q62 100 72 78 M43 83 Q23 65 29 42 M49 52 Q70 42 78 22'/%3E%3Cpath d='M12 91 Q27 94 29 130 M72 78 Q48 82 35 112 M29 42 Q45 51 43 83 M78 22 Q56 29 49 52'/%3E%3C/g%3E%3Cg fill='%23a4b09a' opacity='.32'%3E%3Cellipse cx='15' cy='104' rx='5' ry='14' transform='rotate(-35 15 104)'/%3E%3Cellipse cx='62' cy='88' rx='5' ry='14' transform='rotate(45 62 88)'/%3E%3Cellipse cx='31' cy='57' rx='5' ry='13' transform='rotate(-35 31 57)'/%3E%3Cellipse cx='68' cy='35' rx='5' ry='13' transform='rotate(45 68 35)'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.intestazione::before {
+  left: 12px;
+}
+
+.intestazione::after {
+  right: 12px;
+  transform: scaleX(-1);
+}
+
+@media (max-width: 600px) {
+  .intestazione::before,
+  .intestazione::after {
+    width: 65px;
+    height: 105px;
+    opacity: .55;
+  }
+}
+
+/* Galleria delle creazioni */
+.galleria {
+  max-width: 900px;
+  margin: 65px auto 0;
+  text-align: center;
+}
+
+.galleria > h2 {
+  margin-bottom: 8px;
+}
+
+.galleria-intro {
+  font-size: 20px;
+  font-style: italic;
+  color: var(--salvia);
+  margin: 0 0 35px;
+}
+
+.opera {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 30px;
+  padding: 32px 0;
+  border-top: 1px solid var(--bordo);
+  text-align: left;
+}
+
+.opera-immagine img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+.opera-testo {
+  padding: 10px 0;
+}
+
+.opera-collezione {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--salvia);
+}
+
+.opera-testo h3 {
+  font-size: clamp(27px, 4vw, 39px);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.1;
+  color: var(--verde);
+  margin: 14px 0;
+}
+
+.opera-testo p {
+  font-size: 20px;
+  line-height: 1.35;
+  margin: 10px 0;
+}
+
+.opera-formato {
+  color: var(--salvia);
+}
+
+.opera-prezzo {
+  font-size: 29px !important;
+  color: var(--verde);
+  margin: 18px 0 !important;
+}
+
+.opera-whatsapp {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #718675;
+  color: #fffdf8;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: .3px;
+  transition: background .2s;
+}
+
+.opera-whatsapp:hover {
+  background: #465b4b;
+}
+
+@media (max-width: 600px) {
+  .galleria {
+    margin-top: 42px;
+  }
+
+  .opera {
+    gap: 13px;
+    padding: 24px 0;
+  }
+
+  .opera-collezione {
+    font-size: 8px;
+    letter-spacing: .8px;
+  }
+
+  .opera-testo h3 {
+    font-size: 23px;
+    margin: 8px 0;
+  }
+
+  .opera-testo p {
+    font-size: 15px;
+    margin: 7px 0;
+  }
+
+  .opera-prezzo {
+    font-size: 24px !important;
+    margin: 10px 0 !important;
+  }
+
+  .opera-whatsapp {
+    font-size: 10px;
+    padding: 10px 9px;
+    text-align: center;
+  }
+}
+
+/* Tele leggermente più piccole */
+.opera-immagine img {
+  width: 88%;
+  margin: 0 auto;
+}
+
+
+
+/* Menu di navigazione */
+.menu-altrove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 15px;
+  border-bottom: 1px solid var(--bordo);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: .3px;
+}
+.menu-altrove a {
+  color: var(--verde);
+  text-decoration: none;
+  border-radius: 20px;
+  padding: 7px 13px;
+}
+.menu-altrove a:hover,
+.menu-altrove a[aria-current="page"] {
+  background: #e7eadf;
+}
+.menu-altrove span { color: var(--salvia); }
+
+/* Pagina Chi siamo */
+.presentazione {
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: center;
+}
+.presentazione-sottotitolo {
+  color: var(--salvia);
+  font-style: italic;
+  font-size: 23px;
+  margin: -8px 0 32px;
+}
+.presentazione-contenuto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 38px;
+  text-align: left;
+}
+.presentazione-foto {
+  width: 100%;
+  height: auto;
+  border: 8px solid var(--carta);
+  box-shadow: 0 3px 20px #514a4018;
+}
+.presentazione-testo h3 {
+  color: var(--verde);
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 500;
+}
+.presentazione-testo p {
+  font-size: 21px;
+  line-height: 1.5;
+}
+.presentazione-testo .firma {
+  font-style: italic;
+  color: var(--verde);
+  margin-top: 25px;
+}
+@media (max-width: 600px) {
+  .menu-altrove { gap: 10px; font-size: 12px; }
+  .presentazione-contenuto {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .presentazione-foto {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  .presentazione-testo h3 { font-size: 29px; }
+  .presentazione-testo p { font-size: 20px; }
+}
+
+
+/* Dicitura spedizione inclusa */
+.opera-prezzo .spedizione {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--salvia);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .opera-prezzo .spedizione {
+    font-size: 12px;
+  }
+}
